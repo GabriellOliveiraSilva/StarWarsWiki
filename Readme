@@ -1,0 +1,2 @@
+1 - Inicia a criação do app
+>> npx create-expo-app nome-do-seu-app --template blank
