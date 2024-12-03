@@ -6,6 +6,7 @@ export const StylesCard = styled.TouchableOpacity`
     height: ${({theme}) =>theme.metrics.px(124)}px;
     border-radius: ${({theme}) =>theme.metrics.px(8)}px;
     overflow: hidden;
+    margin: ${({theme}) =>theme.metrics.px(12)}px ;
 
 `
 

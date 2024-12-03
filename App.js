@@ -1,28 +1,35 @@
-import { SplashScreen } from "./src/screens/SplashScreen/SplashScreen";
-import { Home } from "./src/screens/Home/Home";
-import { useFonts, RubikMonoOne_400Regular } from "@expo-google-fonts/rubik-mono-one";
-import {MontserratAlternates_400Regular, MontserratAlternates_300Light} from '@expo-google-fonts/montserrat-alternates'
+//Importação das fontes
+import {
+  useFonts,
+  RubikMonoOne_400Regular,
+} from "@expo-google-fonts/rubik-mono-one";
+import {
+  MontserratAlternates_400Regular,
+  MontserratAlternates_300Light,
+} from "@expo-google-fonts/montserrat-alternates";
 //Para que eu não tenha que ficar importando o theme em todos os arquivos, posso configurar um provedor global de thema
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/styles/";
+//Para Loading
 import AppLoading from "expo-app-loading";
+//Import as rotas
+import { Routes } from "./src/routes/routes";
 
-
-export default function App(){
+export default function App() {
+  //Defino quais fontes serão usadas
   let [fontLoaded] = useFonts({
     RubikMonoOne_400Regular,
     MontserratAlternates_300Light,
-    MontserratAlternates_400Regular
-
-  })
+    MontserratAlternates_400Regular,
+  });
 
   //Veririfico se a fonte esta carregada
-  if(!fontLoaded){
-    return <AppLoading></AppLoading>
+  if (!fontLoaded) {
+    return <AppLoading></AppLoading>;
   }
   return (
     <ThemeProvider theme={theme}>
-      <Home></Home>
+      <Routes></Routes>
     </ThemeProvider>
-  )
+  );
 }

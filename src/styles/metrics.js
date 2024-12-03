@@ -1,7 +1,6 @@
 //Responsividade
 //Estou pegando a dimensão da Tela
 import { Dimensions, PixelRatio } from "react-native";
-
 const { width, height } = Dimensions.get("window"); //Pega o tamnho do height e width
 
 const figmaWidth = 375;
@@ -14,7 +13,7 @@ const px = (valuePx) => {
     (width * parseFloat(widthPercent)) / 100
   );
 
-  return screenPixel
+  return Math.round(screenPixel)
 };
 
 export const metrics = {
