@@ -1,4 +1,5 @@
-import { SplashScreen } from "./src/screens";
+import { SplashScreen } from "./src/screens/SplashScreen/SplashScreen";
+import { Home } from "./src/screens/Home/Home";
 import { useFonts, RubikMonoOne_400Regular } from "@expo-google-fonts/rubik-mono-one";
 import {MontserratAlternates_400Regular, MontserratAlternates_300Light} from '@expo-google-fonts/montserrat-alternates'
 //Para que eu não tenha que ficar importando o theme em todos os arquivos, posso configurar um provedor global de thema
@@ -21,7 +22,7 @@ export default function App(){
   }
   return (
     <ThemeProvider theme={theme}>
-      <SplashScreen></SplashScreen>
+      <Home></Home>
     </ThemeProvider>
   )
 }
