@@ -24,3 +24,12 @@ export const StylesHeroLinearGradiaent = styled(LinearGradient)`
     padding-top: ${({theme}) => theme.metrics.px(56)};
 
 `
+
+export const StylesButtonsView = styled.View`
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-top: ${({theme})=> theme.metrics.px(8)}px;
+`

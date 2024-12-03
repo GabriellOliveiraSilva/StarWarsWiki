@@ -15,6 +15,37 @@ const FAKE_DATA = [
         name: 'Luke Skywalker',
         aka: 'The Choiced'
     },
+    {
+        id: 3,
+        image_url: 'https://media.contentapi.ea.com/content/dam/star-wars-battlefront-2/images/2019/08/swbf2-refresh-hero-large-heroes-page-luke-skywalker-16x9-xl.jpg.adapt.crop1x1.320w.jpg',
+        name: 'Luke Skywalker',
+        aka: 'The Choiced'
+    },
+    {
+        id: 4,
+        image_url: 'https://media.contentapi.ea.com/content/dam/star-wars-battlefront-2/images/2019/08/swbf2-refresh-hero-large-heroes-page-luke-skywalker-16x9-xl.jpg.adapt.crop1x1.320w.jpg',
+        name: 'Luke Skywalker',
+        aka: 'The Choiced'
+    },
+    {
+        id: 5,
+        image_url: 'https://media.contentapi.ea.com/content/dam/star-wars-battlefront-2/images/2019/08/swbf2-refresh-hero-large-heroes-page-luke-skywalker-16x9-xl.jpg.adapt.crop1x1.320w.jpg',
+        name: 'Luke Skywalker',
+        aka: 'The Choiced'
+    },
+    {
+        id: 6,
+        image_url: 'https://media.contentapi.ea.com/content/dam/star-wars-battlefront-2/images/2019/08/swbf2-refresh-hero-large-heroes-page-luke-skywalker-16x9-xl.jpg.adapt.crop1x1.320w.jpg',
+        name: 'Luke Skywalker',
+        aka: 'The Choiced'
+    },
+    {
+        id: 7,
+        image_url: 'https://media.contentapi.ea.com/content/dam/star-wars-battlefront-2/images/2019/08/swbf2-refresh-hero-large-heroes-page-luke-skywalker-16x9-xl.jpg.adapt.crop1x1.320w.jpg',
+        name: 'Luke Skywalker',
+        aka: 'The Choiced'
+    }
+
 
 ]
 
