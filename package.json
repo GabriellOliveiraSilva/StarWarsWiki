@@ -10,17 +10,31 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo-google-fonts/montserrat-alternates": "^0.2.3",
+    "@expo-google-fonts/rubik-mono-one": "^0.2.3",
     "@expo/metro-runtime": "~4.0.0",
     "expo": "^52.0.11",
+    "expo-app-loading": "^2.1.1",
     "expo-status-bar": "~2.0.0",
     "react": "18.3.1",
     "react-dom": "^18.3.1",
     "react-native": "0.76.3",
+    "react-native-reanimated": "^3.16.3",
     "react-native-web": "^0.19.13",
     "styled-components": "^6.1.13"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "@babel/preset-typescript": "^7.26.0",
+    "@react-native-community/eslint-config": "^3.2.0",
+    "babel-plugin-root-import": "^6.6.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "prettier": "^3.4.1"
   },
   "private": true
 }

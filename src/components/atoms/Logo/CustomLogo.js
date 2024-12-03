@@ -1,20 +1,14 @@
 import React from "react";
 import { Image } from "react-native";
+import {StylesCustomLogo} from './StylesCustomLogo'
 
 
 export const CustomLogo = ({source})=>
 {
     return(
-        <Image
+        <StylesCustomLogo
         source={source}
-        style={styles.logo}
-        ></Image>
+        ></StylesCustomLogo>
     )
 }
 
-const styles = {
-    logo:{
-        height: 64,
-        width: 64
-      },
-}

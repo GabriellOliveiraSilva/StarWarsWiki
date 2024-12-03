@@ -1,9 +1,10 @@
 import React from "react";
 import { Text } from "react-native";
-import { StylesCustomText } from "./styles";
-export const CustomText = ({text}) =>{
+import {StylesCustomText} from './StylesCustomText';
+
+export const CustomText = ({text, color, font}) =>{
     return (
-        <StylesCustomText>
+        <StylesCustomText font={font} color={color}>
             {text}
         </StylesCustomText>
     )
