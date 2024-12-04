@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 //Telas
 import { SplashScreen } from "../screens/SplashScreen/SplashScreen";
 import { Home } from "../screens/Home/Home";
+import { Detail } from "../screens/Detail/Detail";
 
 //Cria a rota para navegar sob as telas
 export const Routes = () => {
@@ -18,6 +19,7 @@ export const Routes = () => {
                 {/* Definição das telas dentro do Stack.Navigator */}
                 <Stack.Screen  component={SplashScreen} name="Splash" />
                 <Stack.Screen component={Home} name="Home" />
+                <Stack.Screen component={Detail} name="Detail" />
             </Stack.Navigator>
         </NavigationContainer>
     );

@@ -3,9 +3,9 @@ import { TouchableOpacity } from "react-native";
 
 export const StylesIconButton = styled.TouchableOpacity`
 
-    display: flex;
+    display:flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: ${({align})=> align ? align : 'center'};
 
 `

@@ -4,14 +4,14 @@ import { Ionicons } from "@expo/vector-icons";
 import {theme} from '../../../styles/theme'
 
 
-export const IconButton = ({iconName, onPress, text}) =>{
+export const IconButton = ({iconName, onPress, text, align}) =>{
     return(
-        <StylesIconButton>
-            <Ionicons name={iconName} size={theme.metrics.px(24)} color={theme.colors.white}>
+        <StylesIconButton align={align}>
+            <Ionicons name={iconName}  size={theme.metrics.px(24)} color={theme.colors.white}>
             </Ionicons>
-            <CustomText text={text} font={'normal_text'} size={10} mt={6}>
+           { text && <CustomText text={text} font={'normal_text'} size={10} mt={6}/>}
 
-</CustomText>
+
         </StylesIconButton>
     )
 }

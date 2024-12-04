@@ -10,7 +10,6 @@ export const StylesHero = styled.View`
 `
 
 export const StylesHeroImageBackground = styled.ImageBackground`
-
     width: 100%;
     height: 100%;
 `

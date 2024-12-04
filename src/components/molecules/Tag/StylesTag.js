@@ -5,10 +5,10 @@ export const StylesTag = styled.View`
     align-items: center;
     justify-content: center;
     background-color: ${({theme})=> theme.colors.red};
-    padding: ${({theme})=> theme.metrics.px(6)}px;
+    padding: ${({theme})=> theme.metrics.px(10)}px;
     border-radius: ${({theme})=> theme.metrics.px(24)}px;
     min-width: ${({theme})=> theme.metrics.px(50)}px;
-    max-width: ${({theme})=> theme.metrics.px(80)}px;
+    max-width: ${({theme})=> theme.metrics.px(98)}px;
     margin-top: ${({mt, theme}) => theme.metrics.px(mt || 0)}px ;
     margin-left: ${({ml, theme}) => theme.metrics.px(ml || 0)} px;
     margin-right: ${({mr, theme}) => theme.metrics.px(mr || 0)} px;
