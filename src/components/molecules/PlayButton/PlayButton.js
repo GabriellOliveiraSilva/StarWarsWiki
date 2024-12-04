@@ -8,7 +8,6 @@ export const PlayButton = ({iconName, onPress, text}) =>{
         <StylesPlayButton onPress={onPress}>
             <Ionicons name={iconName} size={theme.metrics.px(12)} color={theme.colors.black}></Ionicons>
             <CustomText text={text} font={'normal_text'} size={14} color={theme.colors.black}>
-
             </CustomText>
         </StylesPlayButton>
     )

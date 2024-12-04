@@ -1,64 +1,25 @@
 import { FlatList } from "react-native";
 import { CustomText } from "../../atoms/Text/CustomText";
 import { Card } from "../../molecules/Card/Card";
-
-const FAKE_DATA = [
-    {
-        id: 0,
-        image_url: 'https://lumiere-a.akamaihd.net/v1/images/darth-vader-main_4560aff7.jpeg?region=213%2C0%2C854%2C854',
-        name: 'Anakin Skywalker',
-        aka: 'Darth Vader'
-    },
-    {
-        id: 1,
-        image_url: 'https://media.contentapi.ea.com/content/dam/star-wars-battlefront-2/images/2019/08/swbf2-refresh-hero-large-heroes-page-luke-skywalker-16x9-xl.jpg.adapt.crop1x1.320w.jpg',
-        name: 'Luke Skywalker',
-        aka: 'The Choiced'
-    },
-    {
-        id: 3,
-        image_url: 'https://media.contentapi.ea.com/content/dam/star-wars-battlefront-2/images/2019/08/swbf2-refresh-hero-large-heroes-page-luke-skywalker-16x9-xl.jpg.adapt.crop1x1.320w.jpg',
-        name: 'Luke Skywalker',
-        aka: 'The Choiced'
-    },
-    {
-        id: 4,
-        image_url: 'https://media.contentapi.ea.com/content/dam/star-wars-battlefront-2/images/2019/08/swbf2-refresh-hero-large-heroes-page-luke-skywalker-16x9-xl.jpg.adapt.crop1x1.320w.jpg',
-        name: 'Luke Skywalker',
-        aka: 'The Choiced'
-    },
-    {
-        id: 5,
-        image_url: 'https://media.contentapi.ea.com/content/dam/star-wars-battlefront-2/images/2019/08/swbf2-refresh-hero-large-heroes-page-luke-skywalker-16x9-xl.jpg.adapt.crop1x1.320w.jpg',
-        name: 'Luke Skywalker',
-        aka: 'The Choiced'
-    },
-    {
-        id: 6,
-        image_url: 'https://media.contentapi.ea.com/content/dam/star-wars-battlefront-2/images/2019/08/swbf2-refresh-hero-large-heroes-page-luke-skywalker-16x9-xl.jpg.adapt.crop1x1.320w.jpg',
-        name: 'Luke Skywalker',
-        aka: 'The Choiced'
-    },
-    {
-        id: 7,
-        image_url: 'https://media.contentapi.ea.com/content/dam/star-wars-battlefront-2/images/2019/08/swbf2-refresh-hero-large-heroes-page-luke-skywalker-16x9-xl.jpg.adapt.crop1x1.320w.jpg',
-        name: 'Luke Skywalker',
-        aka: 'The Choiced'
-    }
+import { StylesHomeList } from "./StylesHomeList";
 
 
-]
 
-export const HomeList = () => {
+export const HomeList = ({text, data, type, mt,mb,ml,mr,ph}) => {
     return (
-        <FlatList
+        
+        <StylesHomeList mt={mt} ml={ml} mb={mb} mr={mr} ph={ph}>
+            <CustomText text={text} font={'subtitle'} ml={5} size={14}></CustomText>
+            <FlatList
             horizontal
             // Dados
-            data={FAKE_DATA}
+            data={data}
             // Como se fosse um map, dizendo que vai ser gerado
-            renderItem={({ item }) => <Card item={item} />}
+            renderItem={({ item }) => <Card item={item} type={type}/>}
             // Key do item
             keyExtractor={(item) => item.id.toString()}  // Usar toString() para garantir que seja uma string
-        />
+            />
+
+        </StylesHomeList>
     )
 }

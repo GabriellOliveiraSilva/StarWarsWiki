@@ -13,8 +13,8 @@ export const Hero =()=>{
         <StylesHero>
             <StylesHeroImageBackground source={{uri: 'https://cdn.posteritati.com/posters/000/000/069/424/star-wars-sm-web.jpg'}}>
                 <StylesHeroLinearGradiaent colors={[colors.dark, 'transparent', colors.dark]}>
-                    <CustomLogo source={ImperialLogo} width={24} height={24}/>
-                    <Tag text={'Filme'} mt={214}> </Tag>
+                    <CustomLogo source={ImperialLogo} width={24} height={24} mt={-84}/>
+                    <Tag text={'Filme'} mt={316}> </Tag>
                     <CustomText text={'Episódio I'} font={'title'} color='light' size={16} mt={20}/>
                     <CustomText text={'A Ameaça Fantasma'} font={'title'} color='light' size={12}/>
                     <StylesButtonsView>

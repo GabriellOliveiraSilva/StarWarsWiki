@@ -9,5 +9,4 @@ export const StylesPlayButton = styled.TouchableOpacity`
     width: ${({theme}) => theme.metrics.px(100)}px;
     border-radius:${({theme}) => theme.metrics.px(8)}px ;
     background-color: ${({theme})=> theme.colors.white};
-
 `
