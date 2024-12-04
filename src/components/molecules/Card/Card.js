@@ -23,7 +23,6 @@ export const Card = ({item, type}) =>{
                 </StylesCardImage>
             </StylesCard>
             <CustomText text={item.name} size={8}/> 
-            <CustomText text={item.aka} size={10}/> 
             </CustomContainer>
         )
     }
