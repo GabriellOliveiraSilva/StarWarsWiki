@@ -17,7 +17,7 @@ export const Hero =({item, type})=>{
                 <StylesHero>
                     <StylesHeroImageBackground source={{uri: item.image ? item.image : item.thumb}}>
                         <StylesHeroLinearGradiaent colors={[colors.dark, 'transparent', colors.dark]}>
-                            <IconButton iconName={'arrow-back-circle-outline'} align={'start'}></IconButton>
+                            <IconButton iconName={'arrow-back-circle-outline'} align={'start'} action={'return'}></IconButton>
                             <Tag text={item.type} mt={214} > </Tag>
                             <CustomText text={item.title ? item.title : item.name} font={'title'} color='light' size={16} mt={20}/>
                             {item.aka && <CustomText text={item.aka} font={'subtitle'} color='light' size={12}/>}
