@@ -6,6 +6,7 @@ import {
 import {
   MontserratAlternates_400Regular,
   MontserratAlternates_300Light,
+  MontserratAlternates_200ExtraLight,
 } from "@expo-google-fonts/montserrat-alternates";
 //Para que eu não tenha que ficar importando o theme em todos os arquivos, posso configurar um provedor global de thema
 import { ThemeProvider } from "styled-components/native";
@@ -21,6 +22,7 @@ export default function App() {
     RubikMonoOne_400Regular,
     MontserratAlternates_300Light,
     MontserratAlternates_400Regular,
+    MontserratAlternates_200ExtraLight,
   });
 
   //Veririfico se a fonte esta carregada

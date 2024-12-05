@@ -7,7 +7,6 @@ import { StylesHomeList } from "./StylesHomeList";
 
 export const HomeList = ({text, data, type, mt,mb,ml,mr,ph}) => {
     return (
-    
         <StylesHomeList mt={mt} ml={ml} mb={mb} mr={mr} ph={ph}>
             <CustomText text={text} font={'subtitle'} ml={5} size={14}></CustomText>
             <FlatList

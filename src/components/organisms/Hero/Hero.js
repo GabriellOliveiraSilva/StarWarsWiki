@@ -8,7 +8,7 @@ import { PlayButton } from "../../molecules/PlayButton/PlayButton";
 import ImperialLogo from '../../../../assets/EmpireLogo.png'
 import { IconBack } from "../../molecules/IconBack/IconBack";
 
-export const Hero =({item, type})=>{
+export const Hero =({item, type, typeOfObj})=>{
     
     switch (type) {
         case 'detail':
@@ -18,7 +18,7 @@ export const Hero =({item, type})=>{
                     <StylesHeroImageBackground source={{uri: item.image ? item.image : item.thumb}}>
                         <StylesHeroLinearGradiaent colors={[colors.dark, 'transparent', colors.dark]}>
                             <IconButton iconName={'arrow-back-circle-outline'} align={'start'} action={'return'}></IconButton>
-                            <Tag text={item.type} mt={214} > </Tag>
+                            <Tag text={typeOfObj} mt={214} > </Tag>
                             <CustomText text={item.title ? item.title : item.name} font={'title'} color='light' size={16} mt={20}/>
                             {item.aka && <CustomText text={item.aka} font={'subtitle'} color='light' size={12}/>}
                             <StylesButtonsView>
@@ -34,7 +34,7 @@ export const Hero =({item, type})=>{
         default:
             return(
                 <StylesHero>
-                    <StylesHeroImageBackground source={{uri: item.image ? item.image : item.thumb}}>
+                    <StylesHeroImageBackground source={{uri: item.image}}>
                         <StylesHeroLinearGradiaent colors={[colors.dark, 'transparent', colors.dark]}>
                             <CustomLogo source={ImperialLogo} width={24} height={24}/>
                             <Tag text={'Filme'} mt={214}> </Tag>

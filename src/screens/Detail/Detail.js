@@ -6,21 +6,20 @@ import { Hero } from "../../components/organisms/Hero/Hero";
 import { ScrollView } from "react-native";
 import { CustomContainerScroll} from "../../components/atoms/ContainerScroll/CustomContainerScroll";
 import { useDataStore } from "../../services/stores/dataStore";
-
+import { Description } from "../../components/organisms/Description/Description";
 
 
 export const Detail = ({}) =>{
   const {selectedData} = useDataStore()
-
-  
-
     return(
 
-      <CustomContainerScroll>
           <CustomContainer justify="center" align="start">
-            <Hero item={selectedData} type={'detail'}></Hero>
+                  <CustomContainerScroll>
+            <Hero item={selectedData.item} typeOfObj={selectedData.type} type={'detail'}></Hero>
+            <Description description={selectedData.item.description}/>
+            </CustomContainerScroll>
         </CustomContainer>
-      </CustomContainerScroll>
+
 
     )
 }

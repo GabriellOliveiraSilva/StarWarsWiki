@@ -11,6 +11,8 @@ import { Detail } from "../screens/Detail/Detail";
 import { Favorites } from "../screens/Favorites/Favorites";
 import { Search } from "../screens/Search/Search";
 import { theme } from "../styles/theme";
+
+//Ícones
 import { Ionicons } from '@expo/vector-icons';
 
 

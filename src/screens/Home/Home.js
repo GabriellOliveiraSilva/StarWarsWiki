@@ -1,43 +1,62 @@
-import { Card } from "../../components/molecules/Card/Card";
-import { HomeList } from "../../components/organisms/HomeList/HomeList";
-import { CustomContainer } from "../../components/atoms/Container/CustomContainer";
-import { CustomText } from "../../components/atoms/Text/CustomText";
-import { Hero } from "../../components/organisms/Hero/Hero";
-import { ScrollView } from "react-native";
-import { CustomContainerScroll } from "../../components/atoms/ContainerScroll/CustomContainerScroll";
 import { useEffect, useState } from "react";
+import { HomeList } from "../../components/organisms/HomeList/HomeList";
+import { CustomContainerScroll } from "../../components/atoms/ContainerScroll/CustomContainerScroll";
+import { CustomContainer } from "../../components/atoms/Container/CustomContainer";
+import { Hero } from "../../components/organisms/Hero/Hero";
+import { Loading } from "../../components/organisms/Loading/Loading";
 import Char from "../../services/hooks/Char";
+import Organization from "../../services/hooks/Organization";
 
-export const Home = ({}) => {
-  // Effects para monitorar o estado dos elementos
+export const Home = () => {
   const [dataChar, setDataChar] = useState([]);
+  const [dataOrganizatiom, setDataOrganization] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Função que faz a chamada da API
   const DATA_CHAR = async () => {
     try {
-      const data = await Char.getAllCharWithLimit(1, 10); // Aqui, passa os parâmetros fixos de página e limite
+      console.log("Fetching character data...");
+      const data = await Char.getAllCharWithLimit(1, 10);
+      console.log("Character data:", data);
       return data;
     } catch (error) {
-      console.log("Error fetching data", error);
+      console.log("Error fetching character data", error);
       return [];
     }
   };
 
-  // Monitora o estado caso tenha alguma alteração
+  const DATA_ORGANIZATION = async () => {
+    try {
+      console.log("Fetching organization data...");
+      const data = await Organization.getOrganizationWithLimit(1, 10);
+      console.log("Organization data:", data);
+      return data;
+    } catch (error) {
+      console.log("Error fetching organization data", error);
+      return [];
+    }
+  };
+
   useEffect(() => {
-    const fetchChar = async () => {
-      const charData = await DATA_CHAR(); // Chama corretamente a função sem parâmetros
+    const fetchData = async () => {
+      console.log("Fetching data...");
+      const charData = await DATA_CHAR();
       setDataChar(charData);
-      setLoading(false);
+
+      const organizationData = await DATA_ORGANIZATION();
+      setDataOrganization(organizationData);
+
+      setLoading(false); // Atualiza o estado de loading
     };
 
-    fetchChar();
-  }, []); // O useEffect só será executado uma vez, quando o componente for montado
+    fetchData();
+  }, []);
 
   if (loading) {
-    return <CustomText text={"Carregando"} />;
+    return (
+          <Loading />
+    );
   }
+
   return (
     <CustomContainerScroll>
       <CustomContainer justify="center" align="start">
@@ -48,7 +67,15 @@ export const Home = ({}) => {
         ></Hero>
         <HomeList
           text={"Personagens"}
-          data={dataChar} 
+          data={dataChar}
+          ph={10}
+          mt={10}
+          type={"char"}
+        ></HomeList>
+
+        <HomeList
+          text={"Organizações"}
+          data={dataOrganizatiom}
           ph={10}
           mt={10}
           type={"char"}

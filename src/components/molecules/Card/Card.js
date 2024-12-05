@@ -3,17 +3,28 @@ import { CustomText } from "../../atoms/Text/CustomText";
 import { CustomContainer} from '../../atoms/Container/CustomContainer'
 import { useNavigation } from "@react-navigation/native";
 import { useDataStore } from "../../../services/stores/dataStore";
+import { useEffect, useState } from "react";
 
 export const Card = ({item, type}) =>{
+    const [typeOfObj, setTypeOfObj] = useState(null)
     const navigation = useNavigation()
 
     const {setSelectedData} = useDataStore()
     const onSelectItem = ()=>{
-
-        setSelectedData(item)
+        setSelectedData({item: item, type: typeOfObj})
         navigation.navigate('Detail')
 
     }
+
+    useEffect(()=>{
+        switch (type) {
+            case 'char':
+                setTypeOfObj('Personagem')
+                break;
+            default:
+                break;
+        }
+    })
 
     if(type==='char'){
         return( 
