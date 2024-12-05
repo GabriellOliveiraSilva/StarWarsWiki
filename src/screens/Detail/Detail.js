@@ -13,12 +13,15 @@ export const Detail = ({}) =>{
   const {selectedData} = useDataStore()
     return(
 
-          <CustomContainer justify="center" align="start">
-                  <CustomContainerScroll>
-            <Hero item={selectedData.item} typeOfObj={selectedData.type} type={'detail'}></Hero>
-            <Description description={selectedData.item.description}/>
-            </CustomContainerScroll>
+      <CustomContainerScroll>
+
+        <CustomContainer justify="center" align="center">
+
+        <Hero item={selectedData.item} typeOfObj={selectedData.type} type={'detail'}></Hero>
+        <Description description={selectedData.item.description}/>
+
         </CustomContainer>
+      </CustomContainerScroll>
 
 
     )

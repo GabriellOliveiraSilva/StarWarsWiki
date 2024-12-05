@@ -14,6 +14,7 @@ import { theme } from "../styles/theme";
 
 //Ícones
 import { Ionicons } from '@expo/vector-icons';
+import { Categories } from "../screens/Categories/Categories";
 
 
 const BottomRoute = () => {
@@ -42,6 +43,9 @@ const BottomRoute = () => {
                 case "Search":
                     iconName = focused ? 'search-circle': 'search-circle-outline'
                     break;
+                    case "Categories":
+                      iconName = focused ? 'albums': 'albums-outline'
+                      break;
                 default:
                     break;
             }
@@ -51,6 +55,7 @@ const BottomRoute = () => {
       })}
     >
       <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Categories" component={Categories} />
       <Tab.Screen name="Search" component={Search} />
       <Tab.Screen name="Favorites" component={Favorites} />
     </Tab.Navigator>

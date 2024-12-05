@@ -51,9 +51,11 @@ export const Home = () => {
     fetchData();
   }, []);
 
+    console.log(dataChar)
+
   if (loading) {
     return (
-          <Loading />
+      <Loading />
     );
   }
 

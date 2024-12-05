@@ -3,15 +3,18 @@ import { CustomText } from "../../atoms/Text/CustomText";
 import { StylesDescription } from "./StylesDescription";
 import { useState, useEffect } from "react";
 import Translate from "../../../services/hooks/Translate";
-
 export const Description = ({description}) =>{
     //Começa com o texto em inglês
     const [translateDescription, setTranslateDescription] = useState(description)
-    const translator = new Translate()
+
+
     //Chama a tradução
     const translate = async () =>{
         try{
-            const data = await translator.TranslateText(description)
+            const data = await Translate.TranslateText(description)
+            if(data === '' || data === null || data === undefined){
+                return description
+            }
             return data
         }catch(error){
             return description
@@ -19,24 +22,24 @@ export const Description = ({description}) =>{
     }
 
     useEffect(()=>{
-        const fetchTranslate = async () =>{
+        const fetchTranslate = async (description) =>{
             try{
                 const textTranslate = await translate()
                 setTranslateDescription(textTranslate)
             }
             catch(error){
-                setTranslateDescription(description)
+                return description
             }
         }
 
-        fetchTranslate()
+        fetchTranslate(description)
     }, [])
 
     return(
         <StylesDescription>
             <CustomContainer>
-                <CustomText text={translateDescription} font={'description'} size={12} >
-                </CustomText>
+                <CustomText text={translateDescription} font={'description'} size={12} />
+
             </CustomContainer>
         </StylesDescription>
     )

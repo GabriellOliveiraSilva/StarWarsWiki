@@ -1,9 +1,9 @@
+import { CustomContainerScroll } from "../../components/atoms/ContainerScroll/CustomContainerScroll"
 import { CustomText } from "../../components/atoms/Text/CustomText"
-
-export const Favorites = () =>{
+export const Categories = () =>{
     return(
-        <CustomText text={'Favorites'}>
-
-        </CustomText>
+        <CustomContainerScroll>
+            
+        </CustomContainerScroll>
     )
 }

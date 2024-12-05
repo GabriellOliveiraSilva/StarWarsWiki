@@ -8,5 +8,5 @@ export const apiData = axios.create({
 // Criando uma instância do axios com a baseURL para traduzir informações da API
 
 export const apiTranslateText = axios.create({
-  baseURL: process.env.HOST
+  baseURL: `http://172.18.67.155:5000`
 })

@@ -1,7 +1,7 @@
 import { apiTranslateText } from "../api/api";
 
 class Translate{
-    async TranslateText(text){
+    static async TranslateText(text){
         try{
             const response = await apiTranslateText.post('/translate',{
                 q: text,
