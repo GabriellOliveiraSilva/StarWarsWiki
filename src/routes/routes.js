@@ -1,26 +1,22 @@
-//Libs de rotas
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-//NavBar
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-//Telas
+// Importações de telas
 import { SplashScreen } from "../screens/SplashScreen/SplashScreen";
 import { Home } from "../screens/Home/Home";
 import { Detail } from "../screens/Detail/Detail";
 import { Favorites } from "../screens/Favorites/Favorites";
 import { Search } from "../screens/Search/Search";
+import { Categories } from "../screens/Categories/Categories";
+import { All } from "../screens/All/All";
 import { theme } from "../styles/theme";
 
-//Ícones
-import { Ionicons } from '@expo/vector-icons';
-import { Categories } from "../screens/Categories/Categories";
-
+// Importações de ícones
+import { Ionicons } from "@expo/vector-icons";
 
 const BottomRoute = () => {
-  //Cria a barra de navegação
   const Tab = createBottomTabNavigator();
-
 
   return (
     <Tab.Navigator
@@ -28,30 +24,32 @@ const BottomRoute = () => {
         headerShown: false,
         tabBarActiveTintColor: theme.colors.red,
         tabBarInactiveTintColor: theme.colors.white,
-        
-        tabBarStyle: { backgroundColor: theme.colors.black, marginBottom: 0, padding: 0, borderTopWidth: 0,},
-        tabBarIcon: ({focused, color, size})=>{
-
-            let iconName
-            switch (route.name) {
-                case "Home":
-                    iconName = focused ? 'home' : 'home-outline'
-                    break;
-                case "Favorites":
-                    iconName = focused ? 'heart-circle': 'heart-circle-outline'
-                    break;
-                case "Search":
-                    iconName = focused ? 'search-circle': 'search-circle-outline'
-                    break;
-                    case "Categories":
-                      iconName = focused ? 'albums': 'albums-outline'
-                      break;
-                default:
-                    break;
-            }
-            return <Ionicons name={iconName} size={size} color={color} />;
-            
-        }
+        tabBarStyle: {
+          backgroundColor: theme.colors.black,
+          marginBottom: 0,
+          padding: 0,
+          borderTopWidth: 0,
+        },
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+          switch (route.name) {
+            case "Home":
+              iconName = focused ? "home" : "home-outline";
+              break;
+            case "Favorites":
+              iconName = focused ? "heart-circle" : "heart-circle-outline";
+              break;
+            case "Search":
+              iconName = focused ? "search-circle" : "search-circle-outline";
+              break;
+            case "Categories":
+              iconName = focused ? "albums" : "albums-outline";
+              break;
+            default:
+              break;
+          }
+          return <Ionicons name={iconName} size={size} color={color} />;
+        },
       })}
     >
       <Tab.Screen name="Home" component={Home} />
@@ -62,19 +60,29 @@ const BottomRoute = () => {
   );
 };
 
-//Cria a rota para navegar sob as telas
+// Criação das rotas
 export const Routes = () => {
-  //Inicializa a rota
   const Stack = createNativeStackNavigator();
 
-  //Define o que vai ser acessado pelas rotas
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        {/* Definição das telas dentro do Stack.Navigator */}
+        {/* Rota inicial */}
         <Stack.Screen component={SplashScreen} name="Splash" />
+
+        {/* Tela Home com a Bottom Tab Navigator */}
         <Stack.Screen component={BottomRoute} name="Home" />
-        <Stack.Screen component={Detail} name="Detail" />
+
+        {/* Tela Detail sem a Bottom Tab Navigator */}
+        <Stack.Screen
+          component={Detail}
+          name="Detail"
+          options={{
+            tabBarStyle: { display: "none" }, // Oculta a navbar para a tela Detail
+          }}
+        />
+
+        <Stack.Screen component={All} name="All" />
       </Stack.Navigator>
     </NavigationContainer>
   );

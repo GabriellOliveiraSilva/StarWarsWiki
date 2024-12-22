@@ -4,25 +4,22 @@ import { CustomContainer } from "../../components/atoms/Container/CustomContaine
 import { CustomText } from "../../components/atoms/Text/CustomText";
 import { Hero } from "../../components/organisms/Hero/Hero";
 import { ScrollView } from "react-native";
-import { CustomContainerScroll} from "../../components/atoms/ContainerScroll/CustomContainerScroll";
+import { CustomContainerScroll } from "../../components/atoms/ContainerScroll/CustomContainerScroll";
 import { useDataStore } from "../../services/stores/dataStore";
 import { Description } from "../../components/organisms/Description/Description";
 
-
-export const Detail = ({}) =>{
-  const {selectedData} = useDataStore()
-    return(
-
-      <CustomContainerScroll>
-
-        <CustomContainer justify="center" align="center">
-
-        <Hero item={selectedData.item} typeOfObj={selectedData.type} type={'detail'}></Hero>
-        <Description description={selectedData.item.description}/>
-
-        </CustomContainer>
+export const Detail = ({}) => {
+  const { selectedData } = useDataStore();
+  return (
+    <CustomContainer>
+      <CustomContainerScroll justify="center" align="center">
+        <Hero
+          item={selectedData.item}
+          typeOfObj={selectedData.type}
+          type={"detail"}
+        ></Hero>
+        <Description description={selectedData.item.description} />
       </CustomContainerScroll>
-
-
-    )
-}
+    </CustomContainer>
+  );
+};
