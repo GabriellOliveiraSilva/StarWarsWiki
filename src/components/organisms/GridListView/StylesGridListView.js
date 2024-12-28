@@ -1,6 +1,8 @@
 import styled from "styled-components/native";
 
-export const StylesGridListView = styled.FlatList.attrs({})`
-  border: solid red 2px;
+// Estilizando o FlatList com duas colunas
+export const StylesGridListView = styled.FlatList.attrs({
+  numColumns: 2, // Valor padrão, se desejado
+})`
   width: 100%;
 `;

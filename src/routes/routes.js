@@ -1,3 +1,4 @@
+// Importações
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -15,6 +16,21 @@ import { theme } from "../styles/theme";
 // Importações de ícones
 import { Ionicons } from "@expo/vector-icons";
 
+// Criado um Stack interno para Categories e suas subtelas
+const CategoriesStack = createNativeStackNavigator();
+
+const CategoriesRoutes = () => {
+  return (
+    <CategoriesStack.Navigator screenOptions={{ headerShown: false }}>
+      {/* Tela principal de Categories */}
+      <CategoriesStack.Screen name="Categories" component={Categories} />
+      {/* Tela "All" como subtela de Categories */}
+      <CategoriesStack.Screen name="All" component={All} />
+    </CategoriesStack.Navigator>
+  );
+};
+
+// Barra de navegação inferior (BottomTabNavigator)
 const BottomRoute = () => {
   const Tab = createBottomTabNavigator();
 
@@ -53,14 +69,15 @@ const BottomRoute = () => {
       })}
     >
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Categories" component={Categories} />
+      {/* Substituído Categories por CategoriesRoutes */}
+      <Tab.Screen name="Categories" component={CategoriesRoutes} />
       <Tab.Screen name="Search" component={Search} />
       <Tab.Screen name="Favorites" component={Favorites} />
     </Tab.Navigator>
   );
 };
 
-// Criação das rotas
+// Criação das rotas principais
 export const Routes = () => {
   const Stack = createNativeStackNavigator();
 
@@ -69,10 +86,8 @@ export const Routes = () => {
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         {/* Rota inicial */}
         <Stack.Screen component={SplashScreen} name="Splash" />
-
         {/* Tela Home com a Bottom Tab Navigator */}
         <Stack.Screen component={BottomRoute} name="Home" />
-
         {/* Tela Detail sem a Bottom Tab Navigator */}
         <Stack.Screen
           component={Detail}
@@ -81,8 +96,6 @@ export const Routes = () => {
             tabBarStyle: { display: "none" }, // Oculta a navbar para a tela Detail
           }}
         />
-
-        <Stack.Screen component={All} name="All" />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -2,6 +2,7 @@ import {
   StylesCard,
   StylesCardImage,
   StylesCardCategories,
+  StylesCardCategoriesAll,
 } from "./StylesCard";
 import { CustomText } from "../../atoms/Text/CustomText";
 import { CustomContainer } from "../../atoms/Container/CustomContainer";
@@ -22,26 +23,12 @@ export const Card = ({ item, type }) => {
         navigation.navigate("Detail");
         break;
       case "categories":
-        console.log("acionado");
         setSelectedCategorie({ item: item, type: typeOfObj });
         navigation.navigate("All");
         break;
       default:
-        console.log("nada");
     }
   };
-
-  useEffect(() => {
-    switch (type) {
-      case "char":
-        setTypeOfObj("Personagem");
-        break;
-      case "categories":
-        setTypeOfObj("Categorias");
-      default:
-        break;
-    }
-  });
 
   switch (type) {
     case "char":
@@ -57,11 +44,28 @@ export const Card = ({ item, type }) => {
 
     case "categories":
       return (
-        <CustomContainer align={"center"} justify={"center"}>
+        <CustomContainer align={"center"} justify={"center"} h={115}>
           <StylesCardCategories onPress={() => onSelectItem()}>
             <CustomText text={item.value}></CustomText>
             <CustomImage source={item.icon}></CustomImage>
           </StylesCardCategories>
+        </CustomContainer>
+      );
+      break;
+
+    case "categoriesAll":
+      return (
+        <CustomContainer>
+          <StylesCardCategoriesAll
+            onPress={() => onSelectItem((type = "char"))}
+          >
+            <CustomImage
+              width={96}
+              height={96}
+              source={item.image}
+            ></CustomImage>
+            <CustomText text={item.name} size={15} ta={"center"}></CustomText>
+          </StylesCardCategoriesAll>
         </CustomContainer>
       );
       break;
